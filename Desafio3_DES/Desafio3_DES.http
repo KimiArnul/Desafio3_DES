@@ -1,0 +1,6 @@
+@Desafio3_DES_HostAddress = http://localhost:5001
+
+GET {{Desafio3_DES_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
