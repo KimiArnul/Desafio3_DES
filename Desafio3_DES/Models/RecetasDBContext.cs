@@ -1,9 +1,11 @@
 ﻿using Desafio3_DES.Models.Seeds;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Desafio3_DES.Models
 {
-    public class RecetasDBContext: DbContext
+    public class RecetasDBContext : IdentityDbContext<Usuario>
     {
         public RecetasDBContext(DbContextOptions<RecetasDBContext> options) : base(options)
         { }

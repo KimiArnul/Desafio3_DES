@@ -11,7 +11,7 @@ namespace Desafio3_DES.Models.Seeds
                 new Ingrediente
                 {
                     IdIngrediente = -1,
-                    NombreIngrediente = "Lechuga Romana",
+                    NombreIngrediente = "Lechuga romana",
                     Cantidad = 1,
                     UnidadMedida = "Unidad",
                     RecetaId = -1
@@ -35,7 +35,7 @@ namespace Desafio3_DES.Models.Seeds
                 new Ingrediente
                 {
                     IdIngrediente = -4,
-                    NombreIngrediente = "pasta Espagueti",
+                    NombreIngrediente = "Pasta espagueti",
                     Cantidad = 250,
                     UnidadMedida = "Gramos",
                     RecetaId = -2
@@ -43,7 +43,7 @@ namespace Desafio3_DES.Models.Seeds
                 new Ingrediente
                 {
                     IdIngrediente = -5,
-                    NombreIngrediente = "Crema de Leche",
+                    NombreIngrediente = "Crema de leche",
                     Cantidad = 100,
                     UnidadMedida = "Mililitros",
                     RecetaId = -2
@@ -59,7 +59,7 @@ namespace Desafio3_DES.Models.Seeds
                 new Ingrediente
                 {
                     IdIngrediente = -7,
-                    NombreIngrediente = "Queso Parmesano",
+                    NombreIngrediente = "Queso parmesano",
                     Cantidad = 50,
                     UnidadMedida = "Gramos",
                     RecetaId = -2

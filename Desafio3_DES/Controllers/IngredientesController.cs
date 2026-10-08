@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Desafio3_DES.Models;
+using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
+[Authorize]
 [ApiController]
 public class IngredientesController : ControllerBase
 {
@@ -36,6 +38,7 @@ public class IngredientesController : ControllerBase
     // PUT: api/Ingrediente/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{idingrediente}")]
+    [Authorize(Policy = "SoloAdministrador")]
     public async Task<IActionResult> PutIngrediente(int? idingrediente, Ingrediente ingrediente)
     {
         if (idingrediente != ingrediente.IdIngrediente)
@@ -67,6 +70,7 @@ public class IngredientesController : ControllerBase
     // POST: api/Ingrediente
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
+    [Authorize(Policy = "SoloAdministrador")]
     public async Task<ActionResult<Ingrediente>> PostIngrediente(Ingrediente ingrediente)
     {
         _context.Ingredientes.Add(ingrediente);
@@ -77,6 +81,7 @@ public class IngredientesController : ControllerBase
 
     // DELETE: api/Ingrediente/5
     [HttpDelete("{idingrediente}")]
+    [Authorize(Policy = "SoloAdministrador")]
     public async Task<IActionResult> DeleteIngrediente(int? idingrediente)
     {
         var ingrediente = await _context.Ingredientes.FindAsync(idingrediente);

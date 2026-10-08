@@ -11,28 +11,28 @@ namespace Desafio3_DES.Models.Seeds
                 new PasosPreparacion
                 {
                     IdPaso = -1,
-                    DescripcionPaso = "Lavar la lechuga y cortarla en trozos.",
+                    DescripcionPaso = "Lavar la lechuga romana y cortarla en trozos.",
                     OrdenPaso = 1,
                     RecetaId = -1
                 },
                 new PasosPreparacion
                 {
                     IdPaso = -2,
-                    DescripcionPaso = "Asar el pollo a la parrilla y cortarlo en tiras",
+                    DescripcionPaso = "Asar el pollo a la parrilla y cortarlo en tiras.",
                     OrdenPaso = 2,
                     RecetaId = -1
                 },
                 new PasosPreparacion
                 {
                     IdPaso = -3,
-                    DescripcionPaso = "Mezclar la lechuga, el pollo y el aderezo César",
+                    DescripcionPaso = "Mezclar la lechuga, el pollo y el aderezo César.",
                     OrdenPaso = 3,
                     RecetaId = -1
                 },
                 new PasosPreparacion
                 {
                     IdPaso = -4,
-                    DescripcionPaso = "Cocinar la passta en agua hirviendo con sal.",
+                    DescripcionPaso = "Cocinar la pasta en agua hirviendo con sal.",
                     OrdenPaso = 1,
                     RecetaId = -2
                 },
