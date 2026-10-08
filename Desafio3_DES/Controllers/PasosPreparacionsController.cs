@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Desafio3_DES.Models;
+using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class PasosPreparacionsController : ControllerBase
 {
     private readonly RecetasDBContext _context;
@@ -36,6 +38,7 @@ public class PasosPreparacionsController : ControllerBase
     // PUT: api/PasosPreparacion/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{idpaso}")]
+    [Authorize(Policy = "SoloAdministrador")]
     public async Task<IActionResult> PutPasosPreparacion(int? idpaso, PasosPreparacion pasospreparacion)
     {
         if (idpaso != pasospreparacion.IdPaso)
@@ -67,6 +70,7 @@ public class PasosPreparacionsController : ControllerBase
     // POST: api/PasosPreparacion
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
+    [Authorize(Policy = "SoloAdministrador")]
     public async Task<ActionResult<PasosPreparacion>> PostPasosPreparacion(PasosPreparacion pasospreparacion)
     {
         _context.PasosPreparacion.Add(pasospreparacion);
@@ -77,6 +81,7 @@ public class PasosPreparacionsController : ControllerBase
 
     // DELETE: api/PasosPreparacion/5
     [HttpDelete("{idpaso}")]
+    [Authorize(Policy = "SoloAdministrador")]
     public async Task<IActionResult> DeletePasosPreparacion(int? idpaso)
     {
         var pasospreparacion = await _context.PasosPreparacion.FindAsync(idpaso);

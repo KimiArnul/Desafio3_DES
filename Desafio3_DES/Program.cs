@@ -1,21 +1,39 @@
 using Desafio3_DES.Models;
+using Desafio3_DES.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Configure EF
 builder.Services.AddDbContext<RecetasDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add services to the container.
 builder.Services.AddControllers();
-
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("SoloAdministrador", p => p.RequireRole(Roles.Administrador));
+});
+
+builder.Services.AddIdentityApiEndpoints<Usuario>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<RecetasDBContext>();
+
+builder.Services.ConfigureApplicationCookie(o =>
+{
+    o.Events.OnRedirectToLogin = ctx => { ctx.Response.StatusCode = 401; return Task.CompletedTask; };
+    o.Events.OnRedirectToAccessDenied = ctx => { ctx.Response.StatusCode = 403; return Task.CompletedTask; };
+});
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    await IdentitySeeder.SeedAsync(scope.ServiceProvider);
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -23,9 +41,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapGroup("/api/identity").MapIdentityApi<Usuario>();
 app.MapControllers();
 
 app.Run();
