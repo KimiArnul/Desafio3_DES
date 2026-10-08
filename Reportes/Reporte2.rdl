@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
   <rd:ReportUnitType>Mm</rd:ReportUnitType>
-  <rd:ReportID>e44b9c97-ba2b-4a0e-a2fc-4ec5bab46f60</rd:ReportID>
+  <rd:ReportID>bd0428b8-6c7a-450a-9729-587661fe8509</rd:ReportID>
   <am:AuthoringMetadata>
     <am:CreatedBy>
       <am:Name>MSRB</am:Name>
@@ -11,33 +11,34 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-10-08T06:33:15.8926983Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-10-08T16:59:55.6062719Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSourceReporte2">
+    <DataSource Name="DataSource_Informe2">
       <rd:SecurityType>Integrated</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=HP\SQLEXPRESS;Initial Catalog=Recetas_Cocina</ConnectString>
+        <ConnectString>Data Source=DESKTOP-AR23ES\SQLSERVER_2022;Initial Catalog=Recetas_Cocina</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
-      <rd:DataSourceID>679fb1b8-5b69-451f-b9cf-4bfdea4e3961</rd:DataSourceID>
+      <rd:DataSourceID>f688be1a-3409-4346-b51e-a344016bb3e7</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DataSourceReporte2</DataSourceName>
+        <DataSourceName>DataSource_Informe2</DataSourceName>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational">
+            <AutoJoin>False</AutoJoin>
             <SelectedColumns>
               <ColumnExpression ColumnOwner="Recetas" ColumnName="NombreReceta" />
               <ColumnExpression ColumnOwner="Recetas" ColumnName="Descripcion" />
               <ColumnExpression ColumnOwner="Recetas" ColumnName="TiempoPreparacion" />
-              <ColumnExpression ColumnOwner="PasosPreparacion" ColumnName="OrdenPaso" />
               <ColumnExpression ColumnOwner="PasosPreparacion" ColumnName="DescripcionPaso" />
+              <ColumnExpression ColumnOwner="PasosPreparacion" ColumnName="OrdenPaso" />
             </SelectedColumns>
             <Joins>
               <Join Type="CROSS JOIN" ColumnOwner="Recetas" />
@@ -54,8 +55,8 @@
   Recetas.NombreReceta
   ,Recetas.Descripcion
   ,Recetas.TiempoPreparacion
-  ,PasosPreparacion.OrdenPaso
   ,PasosPreparacion.DescripcionPaso
+  ,PasosPreparacion.OrdenPaso
 FROM
   Recetas
   INNER JOIN PasosPreparacion
@@ -93,10 +94,13 @@ FROM
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>25mm</Width>
+                  <Width>56.53831mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>25mm</Width>
+                  <Width>13.35833mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>88.07668mm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -105,15 +109,15 @@ FROM
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox2">
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                        <Textbox Name="Textbox5">
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Descripcion Paso</Value>
+                                  <Value>Cantidad de Pasos</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -122,20 +126,36 @@ FROM
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -146,8 +166,8 @@ FROM
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                        <Textbox Name="Textbox7">
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -163,20 +183,93 @@ FROM
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
                             <BottomBorder>
-                              <Color>LightGrey</Color>
+                              <Color>Black</Color>
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Descripcion Paso</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -192,29 +285,53 @@ FROM
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="DescripcionPaso">
-                          <rd:DefaultName>DescripcionPaso</rd:DefaultName>
+                        <rd:Selected>true</rd:Selected>
+                        <Textbox Name="NombreReceta">
+                          <rd:DefaultName>NombreReceta</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DescripcionPaso.Value</Value>
+                                  <Value>=Count(Fields!NombreReceta.Value)</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -240,14 +357,93 @@ FROM
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
                             <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DescripcionPaso">
+                          <rd:DefaultName>DescripcionPaso</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DescripcionPaso.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -264,16 +460,17 @@ FROM
               <TablixMembers>
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>25mm</Size>
+                    <Size>42.1mm</Size>
                     <CellContents>
-                      <Textbox Name="Textbox9">
-                        <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Textbox Name="Textbox11">
+                        <rd:DefaultName>Textbox11</rd:DefaultName>
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -289,20 +486,36 @@ FROM
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Right</TextAlign>
+                              <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
                         <Style>
                           <Border>
-                            <Style>None</Style>
+                            <Style>Solid</Style>
                           </Border>
+                          <TopBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </TopBorder>
                           <BottomBorder>
-                            <Color>LightGrey</Color>
+                            <Color>Black</Color>
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
+                          <LeftBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </LeftBorder>
+                          <RightBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </RightBorder>
                           <BackgroundColor>White</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -314,17 +527,17 @@ FROM
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>25mm</Size>
+                        <Size>32.54834mm</Size>
                         <CellContents>
-                          <Textbox Name="Textbox7">
-                            <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Textbox Name="Textbox17">
+                            <rd:DefaultName>Textbox17</rd:DefaultName>
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Descripcion</Value>
+                                    <Value>Tiempo Preparacion</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
@@ -333,20 +546,36 @@ FROM
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
-                                  <TextAlign>Right</TextAlign>
+                                  <TextAlign>Center</TextAlign>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
                             <Style>
                               <Border>
-                                <Style>None</Style>
+                                <Style>Solid</Style>
                               </Border>
+                              <TopBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </TopBorder>
                               <BottomBorder>
-                                <Color>LightGrey</Color>
+                                <Color>Black</Color>
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
+                              <LeftBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </LeftBorder>
+                              <RightBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </RightBorder>
                               <BackgroundColor>White</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -358,17 +587,17 @@ FROM
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>25mm</Size>
+                            <Size>75mm</Size>
                             <CellContents>
-                              <Textbox Name="Textbox5">
-                                <rd:DefaultName>Textbox5</rd:DefaultName>
+                              <Textbox Name="Textbox15">
+                                <rd:DefaultName>Textbox15</rd:DefaultName>
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>Tiempo Preparacion</Value>
+                                        <Value>Descripcion</Value>
                                         <Style>
                                           <FontSize>11pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
@@ -377,20 +606,36 @@ FROM
                                       </TextRun>
                                     </TextRuns>
                                     <Style>
-                                      <TextAlign>Right</TextAlign>
+                                      <TextAlign>Center</TextAlign>
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
                                 <Style>
                                   <Border>
-                                    <Style>None</Style>
+                                    <Style>Solid</Style>
                                   </Border>
+                                  <TopBorder>
+                                    <Color>Black</Color>
+                                    <Style>Solid</Style>
+                                    <Width>1pt</Width>
+                                  </TopBorder>
                                   <BottomBorder>
-                                    <Color>LightGrey</Color>
+                                    <Color>Black</Color>
                                     <Style>Solid</Style>
                                     <Width>1pt</Width>
                                   </BottomBorder>
+                                  <LeftBorder>
+                                    <Color>Black</Color>
+                                    <Style>Solid</Style>
+                                    <Width>1pt</Width>
+                                  </LeftBorder>
+                                  <RightBorder>
+                                    <Color>Black</Color>
+                                    <Style>Solid</Style>
+                                    <Width>1pt</Width>
+                                  </RightBorder>
                                   <BackgroundColor>White</BackgroundColor>
+                                  <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -406,7 +651,6 @@ FROM
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
-                  <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="NombreReceta">
@@ -420,10 +664,10 @@ FROM
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>25mm</Size>
+                    <Size>42.1mm</Size>
                     <CellContents>
-                      <Textbox Name="NombreReceta">
-                        <rd:DefaultName>NombreReceta</rd:DefaultName>
+                      <Textbox Name="NombreReceta1">
+                        <rd:DefaultName>NombreReceta1</rd:DefaultName>
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -437,19 +681,37 @@ FROM
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <Style>
                           <Border>
-                            <Style>None</Style>
+                            <Style>Solid</Style>
                           </Border>
+                          <TopBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </TopBorder>
                           <BottomBorder>
-                            <Color>LightGrey</Color>
+                            <Color>Black</Color>
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
+                          <LeftBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </LeftBorder>
+                          <RightBorder>
+                            <Color>Black</Color>
+                            <Style>Solid</Style>
+                            <Width>1pt</Width>
+                          </RightBorder>
                           <BackgroundColor>White</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -460,47 +722,65 @@ FROM
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="Descripcion">
+                      <Group Name="TiempoPreparacion">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!Descripcion.Value</GroupExpression>
+                          <GroupExpression>=Fields!TiempoPreparacion.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!Descripcion.Value</Value>
+                          <Value>=Fields!TiempoPreparacion.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>25mm</Size>
+                        <Size>32.54834mm</Size>
                         <CellContents>
-                          <Textbox Name="Descripcion">
-                            <rd:DefaultName>Descripcion</rd:DefaultName>
+                          <Textbox Name="TiempoPreparacion1">
+                            <rd:DefaultName>TiempoPreparacion1</rd:DefaultName>
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!Descripcion.Value</Value>
+                                    <Value>=Fields!TiempoPreparacion.Value</Value>
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
                                       <Color>#333333</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
                             <Style>
                               <Border>
-                                <Style>None</Style>
+                                <Style>Solid</Style>
                               </Border>
+                              <TopBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </TopBorder>
                               <BottomBorder>
-                                <Color>LightGrey</Color>
+                                <Color>Black</Color>
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
+                              <LeftBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </LeftBorder>
+                              <RightBorder>
+                                <Color>Black</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </RightBorder>
                               <BackgroundColor>White</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -511,47 +791,65 @@ FROM
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="TiempoPreparacion">
+                          <Group Name="Descripcion">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!TiempoPreparacion.Value</GroupExpression>
+                              <GroupExpression>=Fields!Descripcion.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!TiempoPreparacion.Value</Value>
+                              <Value>=Fields!Descripcion.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>25mm</Size>
+                            <Size>75mm</Size>
                             <CellContents>
-                              <Textbox Name="TiempoPreparacion">
-                                <rd:DefaultName>TiempoPreparacion</rd:DefaultName>
+                              <Textbox Name="Descripcion1">
+                                <rd:DefaultName>Descripcion1</rd:DefaultName>
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!TiempoPreparacion.Value</Value>
+                                        <Value>=Fields!Descripcion.Value</Value>
                                         <Style>
                                           <FontWeight>Normal</FontWeight>
                                           <Color>#333333</Color>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
-                                    <Style />
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
                                   </Paragraph>
                                 </Paragraphs>
                                 <Style>
                                   <Border>
-                                    <Style>None</Style>
+                                    <Style>Solid</Style>
                                   </Border>
+                                  <TopBorder>
+                                    <Color>Black</Color>
+                                    <Style>Solid</Style>
+                                    <Width>1pt</Width>
+                                  </TopBorder>
                                   <BottomBorder>
-                                    <Color>LightGrey</Color>
+                                    <Color>Black</Color>
                                     <Style>Solid</Style>
                                     <Width>1pt</Width>
                                   </BottomBorder>
+                                  <LeftBorder>
+                                    <Color>Black</Color>
+                                    <Style>Solid</Style>
+                                    <Width>1pt</Width>
+                                  </LeftBorder>
+                                  <RightBorder>
+                                    <Color>Black</Color>
+                                    <Style>Solid</Style>
+                                    <Width>1pt</Width>
+                                  </RightBorder>
                                   <BackgroundColor>White</BackgroundColor>
+                                  <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -565,20 +863,12 @@ FROM
                               <Group Name="Detalles" />
                               <Visibility>
                                 <Hidden>true</Hidden>
-                                <ToggleItem>TiempoPreparacion</ToggleItem>
+                                <ToggleItem>NombreReceta1</ToggleItem>
                               </Visibility>
                             </TablixMember>
                           </TablixMembers>
-                          <Visibility>
-                            <Hidden>true</Hidden>
-                            <ToggleItem>Descripcion</ToggleItem>
-                          </Visibility>
                         </TablixMember>
                       </TablixMembers>
-                      <Visibility>
-                        <Hidden>true</Hidden>
-                        <ToggleItem>NombreReceta</ToggleItem>
-                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -588,11 +878,31 @@ FROM
             <Top>12.7mm</Top>
             <Left>0mm</Left>
             <Height>12mm</Height>
-            <Width>125mm</Width>
+            <Width>307.62166mm</Width>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
             </Style>
           </Tablix>
           <Textbox Name="ReportTitle">
@@ -604,7 +914,7 @@ FROM
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value />
+                    <Value>Estado de los Pasos de Preparación - Cantidad y Orden de Pasos</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>28pt</FontSize>
@@ -616,7 +926,7 @@ FROM
             </Paragraphs>
             <Top>0mm</Top>
             <Height>12.7mm</Height>
-            <Width>139.7mm</Width>
+            <Width>276.08335mm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -636,7 +946,7 @@ FROM
           </Border>
         </Style>
       </Body>
-      <Width>152.4mm</Width>
+      <Width>307.62166mm</Width>
       <Page>
         <PageFooter>
           <Height>11.43mm</Height>
@@ -681,12 +991,12 @@ FROM
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>297.00001mm</PageHeight>
-        <PageWidth>210mm</PageWidth>
-        <LeftMargin>20mm</LeftMargin>
-        <RightMargin>20mm</RightMargin>
-        <TopMargin>20mm</TopMargin>
-        <BottomMargin>20mm</BottomMargin>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
