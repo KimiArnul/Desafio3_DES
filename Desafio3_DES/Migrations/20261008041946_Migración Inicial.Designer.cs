@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Desafio3_DES.Migrations
 {
     [DbContext(typeof(RecetasDBContext))]
-    [Migration("20261007025101_Migración Inicial")]
+    [Migration("20261008041946_Migración Inicial")]
     partial class MigraciónInicial
     {
         /// <inheritdoc />
@@ -57,74 +57,74 @@ namespace Desafio3_DES.Migrations
                     b.HasData(
                         new
                         {
-                            IdIngrediente = -1,
+                            IdIngrediente = 1,
                             Cantidad = 1,
                             NombreIngrediente = "Lechuga Romana",
-                            RecetaId = -1,
+                            RecetaId = 1,
                             UnidadMedida = "Unidad"
                         },
                         new
                         {
-                            IdIngrediente = -2,
+                            IdIngrediente = 2,
                             Cantidad = 200,
                             NombreIngrediente = "Pollo a la parrilla",
-                            RecetaId = -1,
+                            RecetaId = 1,
                             UnidadMedida = "Gramos"
                         },
                         new
                         {
-                            IdIngrediente = -3,
+                            IdIngrediente = 3,
                             Cantidad = 50,
                             NombreIngrediente = "Aderezo César",
-                            RecetaId = -1,
+                            RecetaId = 1,
                             UnidadMedida = "Mililitros"
                         },
                         new
                         {
-                            IdIngrediente = -4,
+                            IdIngrediente = 4,
                             Cantidad = 250,
                             NombreIngrediente = "pasta Espagueti",
-                            RecetaId = -2,
+                            RecetaId = 2,
                             UnidadMedida = "Gramos"
                         },
                         new
                         {
-                            IdIngrediente = -5,
+                            IdIngrediente = 5,
                             Cantidad = 100,
                             NombreIngrediente = "Crema de Leche",
-                            RecetaId = -2,
+                            RecetaId = 2,
                             UnidadMedida = "Mililitros"
                         },
                         new
                         {
-                            IdIngrediente = -6,
+                            IdIngrediente = 6,
                             Cantidad = 1,
                             NombreIngrediente = "Huevo",
-                            RecetaId = -2,
+                            RecetaId = 2,
                             UnidadMedida = "Unidad"
                         },
                         new
                         {
-                            IdIngrediente = -7,
+                            IdIngrediente = 7,
                             Cantidad = 50,
                             NombreIngrediente = "Queso Parmesano",
-                            RecetaId = -2,
+                            RecetaId = 2,
                             UnidadMedida = "Gramos"
                         },
                         new
                         {
-                            IdIngrediente = -8,
+                            IdIngrediente = 8,
                             Cantidad = 500,
                             NombreIngrediente = "Tomates frescos",
-                            RecetaId = -3,
+                            RecetaId = 3,
                             UnidadMedida = "Gramos"
                         },
                         new
                         {
-                            IdIngrediente = -9,
+                            IdIngrediente = 9,
                             Cantidad = 5,
                             NombreIngrediente = "Albahaca",
-                            RecetaId = -3,
+                            RecetaId = 3,
                             UnidadMedida = "Hojas"
                         });
                 });
@@ -156,66 +156,66 @@ namespace Desafio3_DES.Migrations
                     b.HasData(
                         new
                         {
-                            IdPaso = -1,
+                            IdPaso = 1,
                             DescripcionPaso = "Lavar la lechuga y cortarla en trozos.",
                             OrdenPaso = 1,
-                            RecetaId = -1
+                            RecetaId = 1
                         },
                         new
                         {
-                            IdPaso = -2,
+                            IdPaso = 2,
                             DescripcionPaso = "Asar el pollo a la parrilla y cortarlo en tiras",
                             OrdenPaso = 2,
-                            RecetaId = -1
+                            RecetaId = 1
                         },
                         new
                         {
-                            IdPaso = -3,
+                            IdPaso = 3,
                             DescripcionPaso = "Mezclar la lechuga, el pollo y el aderezo César",
                             OrdenPaso = 3,
-                            RecetaId = -1
+                            RecetaId = 1
                         },
                         new
                         {
-                            IdPaso = -4,
+                            IdPaso = 4,
                             DescripcionPaso = "Cocinar la passta en agua hirviendo con sal.",
                             OrdenPaso = 1,
-                            RecetaId = -2
+                            RecetaId = 2
                         },
                         new
                         {
-                            IdPaso = -5,
+                            IdPaso = 5,
                             DescripcionPaso = "Mezclar el huevo, la crema y el queso parmesano.",
                             OrdenPaso = 2,
-                            RecetaId = -2
+                            RecetaId = 2
                         },
                         new
                         {
-                            IdPaso = -6,
+                            IdPaso = 6,
                             DescripcionPaso = "Añadir la mezcla a la pasta caliente.",
                             OrdenPaso = 3,
-                            RecetaId = -2
+                            RecetaId = 2
                         },
                         new
                         {
-                            IdPaso = -7,
+                            IdPaso = 7,
                             DescripcionPaso = "Cortal los tomates y hervirlos hasta que se ablanden.",
                             OrdenPaso = 1,
-                            RecetaId = -3
+                            RecetaId = 3
                         },
                         new
                         {
-                            IdPaso = -8,
+                            IdPaso = 8,
                             DescripcionPaso = "Licuar los tomates y agregar la albahaca.",
                             OrdenPaso = 2,
-                            RecetaId = -3
+                            RecetaId = 3
                         },
                         new
                         {
-                            IdPaso = -9,
+                            IdPaso = 9,
                             DescripcionPaso = "Cocinar por 10 miutos y servir caliente.",
                             OrdenPaso = 3,
-                            RecetaId = -3
+                            RecetaId = 3
                         });
                 });
 
@@ -247,21 +247,21 @@ namespace Desafio3_DES.Migrations
                     b.HasData(
                         new
                         {
-                            IdReceta = -1,
+                            IdReceta = 1,
                             Descripcion = "Ensalada clásica con pollo, lechuga y aderezo César.",
                             NombreReceta = "Ensalada César",
                             TiempoPreparacion = new TimeOnly(0, 20, 0)
                         },
                         new
                         {
-                            IdReceta = -2,
+                            IdReceta = 2,
                             Descripcion = "Pasta con salsa de crema, huevo y queso parmesano.",
                             NombreReceta = "Pasta Carbonara",
                             TiempoPreparacion = new TimeOnly(0, 30, 0)
                         },
                         new
                         {
-                            IdReceta = -3,
+                            IdReceta = 3,
                             Descripcion = "Sopa ligera de tomate con albahaca.",
                             NombreReceta = "Sopa de Tomate",
                             TiempoPreparacion = new TimeOnly(0, 40, 0)

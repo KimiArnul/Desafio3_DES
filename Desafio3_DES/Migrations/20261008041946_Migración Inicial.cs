@@ -18,7 +18,7 @@ namespace Desafio3_DES.Migrations
                 columns: table => new
                 {
                     IdReceta = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "4, 1"),
                     NombreReceta = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Descripcion = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     TiempoPreparacion = table.Column<TimeOnly>(type: "time", nullable: false)
@@ -33,7 +33,7 @@ namespace Desafio3_DES.Migrations
                 columns: table => new
                 {
                     IdIngrediente = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "10, 1"),
                     NombreIngrediente = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     UnidadMedida = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -55,7 +55,7 @@ namespace Desafio3_DES.Migrations
                 columns: table => new
                 {
                     IdPaso = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "10, 1"),
                     DescripcionPaso = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OrdenPaso = table.Column<int>(type: "int", nullable: false),
                     RecetaId = table.Column<int>(type: "int", nullable: false)
@@ -76,9 +76,9 @@ namespace Desafio3_DES.Migrations
                 columns: new[] { "IdReceta", "Descripcion", "NombreReceta", "TiempoPreparacion" },
                 values: new object[,]
                 {
-                    { -3, "Sopa ligera de tomate con albahaca.", "Sopa de Tomate", new TimeOnly(0, 40, 0) },
-                    { -2, "Pasta con salsa de crema, huevo y queso parmesano.", "Pasta Carbonara", new TimeOnly(0, 30, 0) },
-                    { -1, "Ensalada clásica con pollo, lechuga y aderezo César.", "Ensalada César", new TimeOnly(0, 20, 0) }
+                    { 1, "Ensalada clásica con pollo, lechuga y aderezo César.", "Ensalada César", new TimeOnly(0, 20, 0) },
+                    { 2, "Pasta con salsa de crema, huevo y queso parmesano.", "Pasta Carbonara", new TimeOnly(0, 30, 0) },
+                    { 3, "Sopa ligera de tomate con albahaca.", "Sopa de Tomate", new TimeOnly(0, 40, 0) }
                 });
 
             migrationBuilder.InsertData(
@@ -86,15 +86,15 @@ namespace Desafio3_DES.Migrations
                 columns: new[] { "IdIngrediente", "Cantidad", "NombreIngrediente", "RecetaId", "UnidadMedida" },
                 values: new object[,]
                 {
-                    { -9, 5, "Albahaca", -3, "Hojas" },
-                    { -8, 500, "Tomates frescos", -3, "Gramos" },
-                    { -7, 50, "Queso Parmesano", -2, "Gramos" },
-                    { -6, 1, "Huevo", -2, "Unidad" },
-                    { -5, 100, "Crema de Leche", -2, "Mililitros" },
-                    { -4, 250, "pasta Espagueti", -2, "Gramos" },
-                    { -3, 50, "Aderezo César", -1, "Mililitros" },
-                    { -2, 200, "Pollo a la parrilla", -1, "Gramos" },
-                    { -1, 1, "Lechuga Romana", -1, "Unidad" }
+                    { 1, 1, "Lechuga Romana", 1, "Unidad" },
+                    { 2, 200, "Pollo a la parrilla", 1, "Gramos" },
+                    { 3, 50, "Aderezo César", 1, "Mililitros" },
+                    { 4, 250, "pasta Espagueti", 2, "Gramos" },
+                    { 5, 100, "Crema de Leche", 2, "Mililitros" },
+                    { 6, 1, "Huevo", 2, "Unidad" },
+                    { 7, 50, "Queso Parmesano", 2, "Gramos" },
+                    { 8, 500, "Tomates frescos", 3, "Gramos" },
+                    { 9, 5, "Albahaca", 3, "Hojas" }
                 });
 
             migrationBuilder.InsertData(
@@ -102,15 +102,15 @@ namespace Desafio3_DES.Migrations
                 columns: new[] { "IdPaso", "DescripcionPaso", "OrdenPaso", "RecetaId" },
                 values: new object[,]
                 {
-                    { -9, "Cocinar por 10 miutos y servir caliente.", 3, -3 },
-                    { -8, "Licuar los tomates y agregar la albahaca.", 2, -3 },
-                    { -7, "Cortal los tomates y hervirlos hasta que se ablanden.", 1, -3 },
-                    { -6, "Añadir la mezcla a la pasta caliente.", 3, -2 },
-                    { -5, "Mezclar el huevo, la crema y el queso parmesano.", 2, -2 },
-                    { -4, "Cocinar la passta en agua hirviendo con sal.", 1, -2 },
-                    { -3, "Mezclar la lechuga, el pollo y el aderezo César", 3, -1 },
-                    { -2, "Asar el pollo a la parrilla y cortarlo en tiras", 2, -1 },
-                    { -1, "Lavar la lechuga y cortarla en trozos.", 1, -1 }
+                    { 1, "Lavar la lechuga y cortarla en trozos.", 1, 1 },
+                    { 2, "Asar el pollo a la parrilla y cortarlo en tiras", 2, 1 },
+                    { 3, "Mezclar la lechuga, el pollo y el aderezo César", 3, 1 },
+                    { 4, "Cocinar la passta en agua hirviendo con sal.", 1, 2 },
+                    { 5, "Mezclar el huevo, la crema y el queso parmesano.", 2, 2 },
+                    { 6, "Añadir la mezcla a la pasta caliente.", 3, 2 },
+                    { 7, "Cortal los tomates y hervirlos hasta que se ablanden.", 1, 3 },
+                    { 8, "Licuar los tomates y agregar la albahaca.", 2, 3 },
+                    { 9, "Cocinar por 10 miutos y servir caliente.", 3, 3 }
                 });
 
             migrationBuilder.CreateIndex(
