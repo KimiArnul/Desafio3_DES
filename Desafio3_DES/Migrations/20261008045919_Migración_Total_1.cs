@@ -57,7 +57,7 @@ namespace Desafio3_DES.Migrations
                 columns: table => new
                 {
                     IdReceta = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "4, 1"),
                     NombreReceta = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Descripcion = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     TiempoPreparacion = table.Column<TimeOnly>(type: "time", nullable: false)
@@ -178,7 +178,7 @@ namespace Desafio3_DES.Migrations
                 columns: table => new
                 {
                     IdIngrediente = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "10, 1"),
                     NombreIngrediente = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     UnidadMedida = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -200,7 +200,7 @@ namespace Desafio3_DES.Migrations
                 columns: table => new
                 {
                     IdPaso = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "10, 1"),
                     DescripcionPaso = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OrdenPaso = table.Column<int>(type: "int", nullable: false),
                     RecetaId = table.Column<int>(type: "int", nullable: false)
