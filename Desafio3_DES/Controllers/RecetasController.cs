@@ -1,11 +1,13 @@
 using Desafio3_DES.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Desafio3_DES.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class RecetasController : ControllerBase
     {
         private readonly RecetasDBContext _context;
@@ -44,6 +46,7 @@ namespace Desafio3_DES.Controllers
 
         // POST: api/Recetas
         [HttpPost]
+        [Authorize(Policy = "SoloAdministrador")]
         public async Task<ActionResult<Receta>> PostReceta(Receta receta)
         {
             _context.Recetas.Add(receta);
@@ -54,6 +57,7 @@ namespace Desafio3_DES.Controllers
 
         // PUT: api/Recetas/5
         [HttpPut("{id}")]
+        [Authorize(Policy = "SoloAdministrador")]
         public async Task<IActionResult> PutReceta(int id, Receta receta)
         {
             if (id != receta.IdReceta)
@@ -176,6 +180,7 @@ namespace Desafio3_DES.Controllers
 
         // DELETE: api/Recetas/5
         [HttpDelete("{id}")]
+        [Authorize(Policy = "SoloAdministrador")]
         public async Task<IActionResult> DeleteReceta(int id)
         {
             var receta = await _context.Recetas.FindAsync(id);
