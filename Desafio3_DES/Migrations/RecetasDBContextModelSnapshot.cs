@@ -80,7 +80,7 @@ namespace Desafio3_DES.Migrations
                         {
                             IdIngrediente = 4,
                             Cantidad = 250,
-                            NombreIngrediente = "pasta Espagueti",
+                            NombreIngrediente = "Pasta Espagueti",
                             RecetaId = 2,
                             UnidadMedida = "Gramos"
                         },

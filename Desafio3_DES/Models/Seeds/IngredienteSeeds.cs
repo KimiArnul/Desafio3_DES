@@ -35,7 +35,7 @@ namespace Desafio3_DES.Models.Seeds
                 new Ingrediente
                 {
                     IdIngrediente = 4,
-                    NombreIngrediente = "pasta Espagueti",
+                    NombreIngrediente = "Pasta Espagueti",
                     Cantidad = 250,
                     UnidadMedida = "Gramos",
                     RecetaId = 2
