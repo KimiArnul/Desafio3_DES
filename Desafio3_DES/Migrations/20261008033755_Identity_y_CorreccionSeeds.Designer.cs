@@ -4,6 +4,7 @@ using Desafio3_DES.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Desafio3_DES.Migrations
 {
     [DbContext(typeof(RecetasDBContext))]
-    partial class RecetasDBContextModelSnapshot : ModelSnapshot
+    [Migration("20261008033755_Identity_y_CorreccionSeeds")]
+    partial class Identity_y_CorreccionSeeds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
